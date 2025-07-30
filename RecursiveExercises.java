@@ -1,4 +1,4 @@
-Public Class RecursiveExercises {    
+public class RecursiveExercises {    
     // SB: Uses recursion to find the maximum value in a subarray. arr the array is used to search.
     // Left is the starting index and furthest right is the ending.
     // System should print out maximum to minmum value left to right
@@ -27,12 +27,7 @@ Public Class RecursiveExercises {
         int count = (arr[index] == target) ? 1 : 0;
         return count + countOccurrences(arr, target, index + 1);
     }
-        if (left > right) return -1;
-        int mid = (left + right) / 2;
-        if (arr[mid] == target) return mid;
-        else if (target < arr[mid]) return binarySearch(arr, target, left, mid - 1);
-        else return binarySearch(arr, target, mid + 1, right);
-    }
+    
     // SB: Sorted array binary search that returns target item or -1 if not found
     public static int binarySearch(int[] arr, int target, int left, int right) {
         if (left > right) return -1;
@@ -40,6 +35,7 @@ Public Class RecursiveExercises {
         if (arr[mid] == target) return mid;
         else if (target < arr[mid]) return binarySearch(arr, target, left, mid - 1);
         else return binarySearch(arr, target, mid + 1, right);
+    }
      
     // SB: Main Method and test cases
     public static void main(String[] args) {
