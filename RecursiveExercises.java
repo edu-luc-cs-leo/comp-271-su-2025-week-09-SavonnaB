@@ -34,7 +34,8 @@ Public Class RecursiveExercises {
         else return binarySearch(arr, target, mid + 1, right);
     }
     // SB: Sorted array binary search that returns target item or -1 if not found
-     if (left > right) return -1;
+    public static int binarySearch(int[] arr, int target, int left, int right) {
+        if (left > right) return -1;
         int mid = (left + right) / 2;
         if (arr[mid] == target) return mid;
         else if (target < arr[mid]) return binarySearch(arr, target, left, mid - 1);
@@ -57,4 +58,4 @@ Public Class RecursiveExercises {
         int index = binarySearch(sorted, 6, 0, sorted.length - 1);
         System.out.println("Index of 6: " + index);
     }
-}
+} // RecursiveExcerises Class end
